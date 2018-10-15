@@ -22,31 +22,31 @@ for (let i = 0; i < 2; i++) {
     } else {
 
     }
-};
+}
 
-/* While
-let i = 0,
-    a = prompt("Введите обязательную статью расходов в этом месяце", " "),
-    b = prompt("Во сколько обойдется?", " ");
 
+/* while 
+let i = 0;
 while (i < 2) {    
+    let a = prompt("Введите обязательную статью расходов в этом месяце", " "),
+        b = prompt("Во сколько обойдется?", " ");
     ( (typeof(a)) === "string" && (typeof(a)) !=null && (typeof(b)) !=null && a != '' && b != '' && a.length < 50)
         console.log("done");
         i++;
         appData.expenses[a] = b;
-} */
+}*/
  
-/* Do While 
+/* do while
 let i = 0; 
-let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
-    b = prompt("Во сколько обойдется?", "");
-do { ( (typeof(a)) === "string" && (typeof(a)) !=null && (typeof(b)) !=null && a != '' && b != '' && a.length < 50) 
+do {
+    let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+        b = prompt("Во сколько обойдется?", ""); 
+    ( (typeof(a)) === "string" && (typeof(a)) !=null && (typeof(b)) !=null && a != '' && b != '' && a.length < 50) 
         i++;
         console.log("done");
-        appData.expenses[a] = b;
-        
+        appData.expenses[a] = b;     
 }
-while (i < 2);   */
+while (i < 2);  */
             
 appData.moneyPerDay = appData.budjet / 30;
 
