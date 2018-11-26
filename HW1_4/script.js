@@ -71,7 +71,7 @@ let appData = {
         if ((typeof(items)) === "string" && (typeof(items)) !=null && items !='') {
             appData.income[items];
         } else {
-            console.log("Произошла ошибка");
+            items = items - 1;
         };   
         
         appData.income.forEach(function(items, i) {
