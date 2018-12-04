@@ -1,5 +1,6 @@
 "use strict";
 
+
 let menu = document.querySelector('.menu'),
     mn = document.getElementsByTagName('li'),
     title = document.getElementById('title'),
