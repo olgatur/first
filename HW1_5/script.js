@@ -23,9 +23,9 @@ let appData = {
     chooseExpenses: function() {      //Выбор обязательных расходов
         for (let i = 0; i < 2; i++) {
             let a = prompt("Введите обязательную статью расходов в этом месяце", " "),
-                b = prompt("Во сколько обойдется?", " ");
+                b = +prompt("Во сколько обойдется?", " ");
         
-            if ((typeof(a)) === "string" && (typeof(a)) !=null && (typeof(b)) !=null && a != '' && b != '' && a.length < 50) {
+            if ((typeof(a)) !=null && (typeof(b)) !=null && a != '' && b != '' && a.length < 50) {
                 console.log("done");
                 appData.expenses[a] = b;
             } else {
@@ -85,7 +85,27 @@ let appData = {
     }
 };
 
+//Получение кнопки 'Начать расчет' через id
 let btn = document.createElement('button'),
     textInBtn = document.createTextNode('Начать расчет');
+    btn.id = 'myUniqueID';
 
-btn.appendChild(textInBtn);
+    btn.appendChild(textInBtn);
+    document.body.insertBefore(btn, document.body.firstChild);
+    
+   
+//Получение кнопки 'Утвердить'
+let btnAdopt = document.createElement('button'),
+    textAdopt = document.createTextNode('Утвердить');
+    
+    btnAdopt.appendChild(textAdopt);
+    document.body.insertBefore(btnAdopt, document.body.secondChild);
+    
+//Получение кнопки 'Рассчитать'
+let btnCaculate = document.createElement('button'),
+    textCalculate = document.createTextNode('Рассчитать');
+        
+    btnCaculate.appendChild(textCalculate);
+    document.body.insertBefore(btnCaculate, document.body.secondChild);
+        
+    
