@@ -24,6 +24,9 @@ let btnStart = document.getElementById('start'),
     monthValue = document.querySelector('.month-value'),
     dayValue = document.querySelector('.day-value');
 
+btnCountBudget.disabled = true;
+btnCountBudget.style.background = 'red';
+
 let money, time;
 
 btnStart.addEventListener('click', function() {
@@ -39,42 +42,19 @@ btnStart.addEventListener('click', function() {
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
-
-    
-   // btnCountBudget.disabled = false;
-    //btnCountBudget.style.background = 'blue';
-    
-    for (let i = 0; i < expensesItem.length; i++) {
-        expensesItem[i].addEventListener('input', function() {
-            if (expensesItem[0].value == '' || expensesItem[1].value == '' || expensesItem[2].value == '' || expensesItem[3].value == '') {
-                btnExpenses.disabled = true;
-                btnExpenses.style.background = 'red';
-            } else {
-                btnExpenses.disabled = false;
-                btnExpenses.style.background = 'blue';
-            }
-        });
-    };
-
-    for (let i = 0; i < expensesItem.length; i++) {
-        expensesItem[i].addEventListener('input', function() {
-            if (expensesItem[0].value == '' || expensesItem[1].value == '' || expensesItem[2].value == '' || expensesItem[3].value == '') {
-                btnExpenses.disabled = true;
-                btnExpenses.style.background = 'red';
-            } else {
-                btnExpenses.disabled = false;
-                btnExpenses.style.background = 'blue';
-            }
-        });
-    };
-   // btnOptionalExpenses.disabled = false;
-   // btnOptionalExpenses.style.background = 'blue';
-
-    //btnCountBudget.disabled = false;
-    //btnCountBudget.style.background = 'blue';
-
 }); 
 
+for (let i = 0; i < expensesItem.length; i++) {
+    expensesItem[i].addEventListener('input', function() {
+        if (expensesItem[0].value == '' || expensesItem[1].value == '' || expensesItem[2].value == '' || expensesItem[3].value == '') {
+            btnExpenses.disabled = true;
+            btnExpenses.style.background = 'red';
+        } else {
+            btnExpenses.disabled = false;
+            btnExpenses.style.background = 'blue';
+        }
+    });
+};
 
 btnExpenses.addEventListener('click', function(){
     let sum = 0; 
@@ -91,20 +71,34 @@ btnExpenses.addEventListener('click', function(){
         }
     }
     expensesValue.textContent = sum;
+    appData.expenses = sum;
+    btnCountBudget.disabled = false;
+    btnCountBudget.style.background = 'blue';
 });
+
+for (let i = 0; i < optionalExpensesItem.length; i++) {
+    optionalExpensesItem[i].addEventListener('input', function() {
+        if (optionalExpensesItem[i].value == '' ) {
+            btnOptionalExpenses.disabled = true;
+            btnOptionalExpenses.style.background = 'red';
+        } else {
+            btnOptionalExpenses.disabled = false;
+            btnOptionalExpenses.style.background = 'blue';
+        }
+    });
+};
 
 btnOptionalExpenses.addEventListener('click', function() { //Выбор необязательных расходов
     for (let i = 0; i < optionalExpensesItem.length; i++) {
         let c = optionalExpensesItem[i].value;
         appData.optionalExpenses [i] = c;
         optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
-    }
+    };
 });
 
 btnCountBudget.addEventListener('click', function() {
-
-    if (appData.budget != undefined & appData.expenses != undefined) {
-        appData.moneyPerDay = ((appData.budget - typeof(Number('appData.expenses)/ 30).toFixed();
+    if (appData.budget != undefined && appData.expenses != undefined) {
+        appData.moneyPerDay = ((appData.budget - appData.expenses) / 30).toFixed();
 
         dayBudgetValue.textContent = appData.moneyPerDay;
     
@@ -159,7 +153,6 @@ percentValue.addEventListener('input', function() {
 
         monthSavingsValue.textContent = appData.monthIncome.toFixed(1);
         yearSavingsValue.textContent = appData.yearIncome.toFixed(1);
-
     }
 });
 
@@ -170,8 +163,4 @@ let appData = {
     optionalExpenses: {},
     income: [],
     savings: false,
-};
-
-console.log(typeof(appData.expenses));
-console.log(typeof(appData.budget));
-    
+};   
