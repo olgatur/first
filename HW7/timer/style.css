@@ -7,40 +7,10 @@
     font-size: 20px;
 }
 
-.timer-time {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 20px;
-}
-
-.timer-item {
-    position: relative;
-    display: inline-block;
-    min-width: 75px;
-    vertical-align: top;
+div{
+    padding: 100px;
+    font-size: 80px;
     text-align: center;
-    margin: 0 5px;
-}
-
-.timer-item:after {
-    content: ':';
-    position: absolute;
-    right: -10px;
-    top: 0px;
-    display: block;
-    font-size: 20px;
-}
-
-.timer-item:last-child:after {
-    display: none;
-}
-
-.timer-item span {
-    display: block;
-    font-size: 20px;
-}
-
-.timer-item__numbers {
-    margin-bottom: 10px;
     font-weight: bold;
+    color: red;
 }
