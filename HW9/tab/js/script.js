@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Timer (урок 8)
 
-    let deadline = '2018-12-25'; //эту дату можно ввести с сервера или спрашивать у пользователя 
+    let deadline = '2018-12-29'; //эту дату можно ввести с сервера или спрашивать у пользователя 
 
   
     // Через функцию узнаем промежуток времени до дедлайна 
@@ -97,7 +97,6 @@ window.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < descriptionBtn.length; i++){
         descriptionBtn[i].addEventListener('click', function(){ // При клике на кнопку показывается блок overlay(модальное окно)
         overlay.style.display = 'block';
-        this.classList.add('more-splash'); //добавляем новый класс
         document.body.style.overflow = 'hidden'; // Запрещаем прокрутку страницы как только появляется модальное окно
         });
     };
@@ -105,7 +104,6 @@ window.addEventListener('DOMContentLoaded', function() {
     close.addEventListener ('click', function() { //Закрываем модальное окно
         overlay.style.display = 'none';
         more.classList.remove('more-splash'); // удаляем класс
-        descriptionBtn[i].classList.remove('more-splash');
         document.body.style.overflow = ''; // Отменяем запрет прокрутки при нажатии на крестик
     });
 
