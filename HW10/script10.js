@@ -1,56 +1,37 @@
 "use strict";
 
 class Options{
-    constructor(height, width = 100, bg = 'red', fontSize = 16, textAlign = 'center') {
+    constructor(height, width, bg, fontSize, textAlign) {
         this.height = height;
         this.width = width;
         this.bg = bg;
         this.fontSize = fontSize;
         this.textAlign = textAlign;
-        }
-        cssText: function () {
-            
-                let newDiv = document.createElement('div');
-       // div.classList.add('cssText');
-        newDiv.innerHTML = "<h1>Hello!</h1>";
-            }
-            
-    };
-    cssText();
-   
-        
-        const cst = new Options(50, 100, 'red', 86, 'center');
-    div.wDiv();
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //console.log(wDiv());
-    //newDiv.classList
-        //let squ = new Options (50, 100, 'red', 16, 'center', 'exit()');
-        //console.log(squ);
-        
-  
-   //newDiv.wDiv();
-    //create() {
+    }
 
-    //let newDiv = document.createElement('div');
-        //newDiv.classList.add('my-class');
+        createDiv() {
+            let div = document.createElement('div');
+            
+            div.style.cssText = `width: ${this.width};
+                            hight: ${this.height};
+                            background-color: ${this.bg};
+                            font-size: ${this.fontSize};`
+                            
+            div.textContent = '123';
+            document.body.appendChild(div);
+        }    
+    }     
         
- 
+    let obj = new Options('100px', '100px', 'red', '86px', 'center');
+    let obj2 = new Options('70px', '25px', 'blue', '50px', 'left');
+    let obj3 = new Options('50px', '20px', 'green', '50px', 'center');
+
+    obj.createDiv();
+    obj2.createDiv();
+    obj3.createDiv();
+    
+    console.log(obj);
+    console.log(obj);
+    
+    
     
