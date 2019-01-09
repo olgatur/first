@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Timer (урок 8)
 
-    let deadline = '2018-12-29'; //эту дату можно ввести с сервера или спрашивать у пользователя 
+    let deadline = '2019-01-10'; //эту дату можно ввести с сервера или спрашивать у пользователя 
 
   
     // Через функцию узнаем промежуток времени до дедлайна 
@@ -108,18 +108,76 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
    
-});    
+    
 
      // 11 Урок Подключение скрипта отправки данных с формы к модальному окну
 
     //Form
-    let message = new Object();
-    message.loading = "Загрузка...";
-    message.success = "Спасибо! Скоро мы с вами свяжемся";
-    message.failure = "Что-то пошло не так...";
+    let message = {
+        loading: 'Загрузка...',
+        success: 'Спасибо! Скоро мы с вами свяжемся',
+        failure: 'Что-то пошло не так...'
+    };
 
-    let form = document.getElementsByClassName('main-form')[0],
-    //внутри формы будем искать inputы
+    let form = document.querySelector('.main-form'),
+    // получаем все inputы с этой формы
     input = form.getElementsByTagName('input'),
+    // для оповещения пользователя созданным объектом message, создаем новый
+    // элемент на странице , задаем ему определенный класс и помещаем в опреленное
+    // место на странице
     statusMessage = document.createElement('div');
     statusMessage.classList.add('status'); //Новому(только созданному) div назначаем класс 
+
+    // Пишем запрос на сервер
+
+    // На форму необходимо повесить определенный обработчик события
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Отменяем перезагрузку страницы
+                                // Это событие происходит только тогда, когда форма отправляется
+
+        form.appendChild(statusMessage);// Оповещаем пользователя как прошел запрос, помещаем новый элемент в форму
+                                        //добавляем новый div, который лежит в переменной с названием statusMessage
+        
+        let request = new XMLHttpRequest();// создаем запрос для отправки данных на сервер
+                                            // в переменную помещаем новый конструктор с объектом XMLHttpRequest();
+        request.open('POST', 'server.php');
+        
+        // Настраиваем заголовки  http запроса
+        /*request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //эта команда говорит о содержании в контенте(это то,что отправляем на сервер) данных из формы
+    
+        let formData = new FormData(form);
+        request.send(formData);
+        */
+        
+
+            //Формат JSON 
+
+        request.setRequestHeader('Content-Type', 'application/ison; charset=utf-8');
+    
+        let formData = new FormData(form);
+
+        // преобразовываем данные из формы в JSON формат
+
+        let obj = {}; //Создаем промежуточный объект
+        formData.forEach(function(value, key) {
+            obj[key] = value;
+        });
+        let json = JSON.stringify(obj);
+
+        request.send(json); 
+
+        request.addEventListener('readystatechange', function() { // для наблюдения изменения состояния запроса
+            if (request.readyState < 4) {
+                statusMessage.innerHTML = message.loading;
+            } else if (request.readyState === 4 && request.status == 200) {
+                statusMessage.innerHTML = message.success;
+            } else {
+                statusMessage.innerHTML = message.failure;
+            }    
+        });  
+
+        for (let i = 0; i < input.length; i++){    //Очищение формы после отправки
+            input[i].value = '';
+        }
+    });
+});
