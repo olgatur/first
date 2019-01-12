@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-   $('.col-sm-7').on('click', function(){
+    $('.col-sm-7:last a:eq(1)').on('click', function(){
          $('.overlay').animate(
             {
                 opacity: 'toggle',
@@ -13,9 +13,9 @@ $(document).ready(function() {
             marginTop: '150px'
         }, 3000
         )
-       
     });
-    $('.col-sm-3').on('click', function(){
+    
+    $('.col-sm-3:not(.main_tel)').on('click', function(){
         $('.overlay').animate(
            {
                opacity: 'toggle',
@@ -28,9 +28,8 @@ $(document).ready(function() {
            marginTop: '150px'
        }, 3000
        )
-      
-   });
-    
+    });
+
     $('.close').on('click', function(){
         $('.overlay').animate({
             opacity: 'hide',
@@ -45,6 +44,6 @@ $(document).ready(function() {
        }, 2500
        )
       
-   });
+    });
 
 });
