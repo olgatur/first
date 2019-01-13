@@ -1,13 +1,12 @@
+'use strict';
+import {calc} from './modules/calc.js';
+import {form} from './modules/form.js';
+import {slider} from './modules/slider.js';
+import {tabs} from './modules/tabs.js';
+import {timer} from './modules/timer.js';
+import {modal} from './modules/modal.js';
+
 window.addEventListener('DOMContentLoaded', function() {
-
-    'use strict';
-    let calc = require('./parts/calc.js'),
-        form = require('./parts/form.js'),
-        slider = require('./parts/slider.js'),
-        tabs = require('./parts/tabs.js'),
-        timer = require('./parts/timer.js'),
-        modal = require('./parts/modal.js');
-
     calc();
     form();
     slider();

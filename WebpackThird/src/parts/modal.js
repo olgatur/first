@@ -24,4 +24,4 @@ function modal() {
     });
 }
 
-module.exports = modal;
+export {modal};

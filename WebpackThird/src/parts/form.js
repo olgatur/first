@@ -75,4 +75,4 @@ function form() {
     }
 }
 
-module.exports = form;
+export {form};
