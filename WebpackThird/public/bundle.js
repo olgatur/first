@@ -90,25 +90,32 @@
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _parts_calc_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js");
+/* harmony import */ var _parts_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/form.js */ "./parts/form.js");
+/* harmony import */ var _parts_slider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js");
+/* harmony import */ var _parts_tabs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts/tabs.js */ "./parts/tabs.js");
+/* harmony import */ var _parts_timer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./parts/timer.js */ "./parts/timer.js");
+/* harmony import */ var _parts_modal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parts/modal.js */ "./parts/modal.js");
+
+
+
+
+
+
+
 
 window.addEventListener('DOMContentLoaded', function () {
-  'use strict';
-
-  var calc = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js"),
-      form = __webpack_require__(/*! ./parts/form.js */ "./parts/form.js"),
-      slider = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js"),
-      tabs = __webpack_require__(/*! ./parts/tabs.js */ "./parts/tabs.js"),
-      timer = __webpack_require__(/*! ./parts/timer.js */ "./parts/timer.js"),
-      modal = __webpack_require__(/*! ./parts/modal.js */ "./parts/modal.js");
-
-  calc();
-  form();
-  slider();
-  tabs();
-  timer();
-  modal();
+  Object(_parts_calc_js__WEBPACK_IMPORTED_MODULE_0__["calc"])();
+  Object(_parts_form_js__WEBPACK_IMPORTED_MODULE_1__["form"])();
+  Object(_parts_slider_js__WEBPACK_IMPORTED_MODULE_2__["slider"])();
+  Object(_parts_tabs_js__WEBPACK_IMPORTED_MODULE_3__["tabs"])();
+  Object(_parts_timer_js__WEBPACK_IMPORTED_MODULE_4__["timer"])();
+  Object(_parts_modal_js__WEBPACK_IMPORTED_MODULE_5__["modal"])();
 });
 
 /***/ }),
@@ -117,9 +124,12 @@ window.addEventListener('DOMContentLoaded', function () {
 /*!***********************!*\
   !*** ./parts/calc.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: calc */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calc", function() { return calc; });
 function calc() {
   var persons = document.querySelectorAll('.counter-block-input')[0],
       restDays = document.querySelectorAll('.counter-block-input')[1],
@@ -180,7 +190,7 @@ function calc() {
   });
 }
 
-module.exports = calc;
+
 
 /***/ }),
 
@@ -188,9 +198,12 @@ module.exports = calc;
 /*!***********************!*\
   !*** ./parts/form.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: form */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "form", function() { return form; });
 function form() {
   var message = {
     loading: 'Загрузка...',
@@ -272,7 +285,7 @@ function form() {
   }
 }
 
-module.exports = form;
+
 
 /***/ }),
 
@@ -280,9 +293,12 @@ module.exports = form;
 /*!************************!*\
   !*** ./parts/modal.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: modal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modal", function() { return modal; });
 function modal() {
   var more = document.querySelector('.more'),
       // Получаем кнопку "Узнать больше"
@@ -317,7 +333,7 @@ function modal() {
   });
 }
 
-module.exports = modal;
+
 
 /***/ }),
 
@@ -325,9 +341,12 @@ module.exports = modal;
 /*!*************************!*\
   !*** ./parts/slider.js ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: slider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slider", function() { return slider; });
 function slider() {
   var slideIndex = 1,
       //параметр текущего слайда (т.е. здесь переменная, которая отвечает за тот слайд, который показывается в текущий момент)
@@ -395,7 +414,7 @@ function slider() {
   });
 }
 
-module.exports = slider;
+
 
 /***/ }),
 
@@ -403,9 +422,12 @@ module.exports = slider;
 /*!***********************!*\
   !*** ./parts/tabs.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: tabs */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabs", function() { return tabs; });
 function tabs() {
   var tab = document.querySelectorAll('.info-header-tab'),
       info = document.querySelector('.info-header'),
@@ -442,7 +464,7 @@ function tabs() {
   });
 }
 
-module.exports = tabs;
+
 
 /***/ }),
 
@@ -450,9 +472,12 @@ module.exports = tabs;
 /*!************************!*\
   !*** ./parts/timer.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: timer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "timer", function() { return timer; });
 function timer() {
   var deadline = '2019-01-10'; //эту дату можно ввести с сервера или спрашивать у пользователя 
   // Через функцию узнаем промежуток времени до дедлайна 
@@ -495,7 +520,7 @@ function timer() {
   setClock('timer', deadline);
 }
 
-module.exports = timer;
+
 
 /***/ })
 
