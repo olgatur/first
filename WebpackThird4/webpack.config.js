@@ -4,7 +4,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: './index.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'main.js',
         path: path.resolve(__dirname, 'public')
     },
     mode: 'development',
